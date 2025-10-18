@@ -37,7 +37,7 @@ Since this extension is not yet on the Chrome Web Store, you can install it loca
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](https://www.google.com/search?q=LICENSE) file for full details. 
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/m-sohel/urlPanda/blob/main/LICENSE) file for full details. 
 
 -----
 
