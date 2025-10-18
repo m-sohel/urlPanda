@@ -1,0 +1,129 @@
+/* Using CSS Variables for an easy-to-manage color palette */
+:root {
+    --background-color: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #6b7280;
+    --accent-color: #3b82f6;
+    --accent-hover: #2563eb;
+    --border-color: #e5e7eb;
+    --item-background: #f9fafb;
+    --danger-color: #ef4444;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    width: 320px;
+    padding: 16px;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 16px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.4);
+}
+
+button[type="submit"] {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--accent-color);
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--accent-hover);
+}
+
+#links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.link-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: var(--item-background);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.link-item:hover {
+    background-color: #f3f4f6;
+}
+
+.link-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow: hidden; /* Important for text truncation */
+}
+
+.link-content img {
+    width: 16px;
+    height: 16px;
+}
+
+.link-content a {
+    text-decoration: none;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+}
+
+.link-content a:hover {
+    color: var(--accent-color);
+}
+
+.delete-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 2px;
+    opacity: 0.5;
+    transition: opacity 0.2s, color 0.2s;
+}
+
+.delete-btn:hover {
+    opacity: 1;
+    color: var(--danger-color);
+}
