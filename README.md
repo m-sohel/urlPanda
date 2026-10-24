@@ -1,44 +1,133 @@
-# urlPanda
+# urlPanda 🐼
 
-[](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Manifest V3](https://img.shields.io/badge/Manifest-V3-blue.svg)](https://developer.chrome.com/docs/extensions/mv3/intro/)
 
-urlPanda is a lightweight and simple Chrome extension designed to help you quickly save, title, and manage important URLs. It provides a clean popup interface to save your current tab and list all your saved links for easy access.
+**urlPanda** is a fast, clean, and lightweight Chrome extension to save, organize, and track your important web links. It keeps all your bookmarks organized locally with folders, tags, reading lists, instant search, duplicate alerts, and JSON backup/restore—with zero backend, zero account requirements, and 100% privacy.
 
-## Preview
-<img width="1920" height="897" alt="Screenshot (834)" src="https://github.com/user-attachments/assets/3e352788-0c99-48d0-9746-bdf1af43aadd" />
+---
 
-## Features
+## ✨ Features
 
-  * **Save Current Tab:** Quickly save the URL and title of your active tab with a single click.
-  * **Custom Titles:** Add an optional custom title to your link before saving. If left blank, the page's title is used automatically.
-  * **Link Management:** View all your saved links in a clean, scrollable list directly in the popup.
-  * **Favicon Display:** Each saved link is displayed with its website's favicon for easy identification.
-  * **Delete Links:** Easily remove links you no longer need with a simple delete button.
-  * **Local Storage:** Uses `chrome.storage.local` to securely store your links on your device.
-  * **Persistent Links:** Links open in a new tab to ensure you don't lose your current page.
+### 📁 1. Folders & Collections
+* **Organize by topic:** Group your links into custom folders such as `Development`, `Learning`, `Projects`, `Personal`, and `General`.
+* **Full Folder Management:** Create new folders, rename existing folders, and delete folders with automatic reassignment of links to `General` to avoid data loss.
+* **Easy Organization:** Move links between folders at any time from the link editor or directly when saving.
 
-## How to Install
+### 🔍 2. Instant Search & Filters
+* **Real-time Search:** Instantly search across link titles, URLs, personal notes, and tags as you type.
+* **Multi-criteria Filtering:** Filter links simultaneously by folder, tag, and reading status.
+* **Quick Tag Bar:** Click any tag chip (`#frontend`, `#article`) to quickly filter matching links.
+* **One-Click Reset:** Clear all active filters with a single click.
 
-Since this extension is not yet on the Chrome Web Store, you can install it locally in developer mode:
+### ✏️ 3. In-Place Link Editing
+* Edit a link’s **title**, **URL**, **folder**, **reading status**, **tags**, and **notes** at any time without deleting and recreating it.
+* Built-in URL validation to prevent broken or malformed entries.
 
-1.  **Download:** Download or clone this repository to your local machine.
-2.  **Open Extensions Page:** Open the Chrome browser and navigate to `chrome://extensions`.
-3.  **Enable Developer Mode:** Turn on the **Developer mode** toggle, which is usually in the top-right corner.
-4.  **Load Unpacked:** Click the **"Load unpacked"** button that appears.
-5.  **Select Directory:** Select the folder where you saved the project files (the one containing `manifest.json`).
-6.  **Done\!** The urlPanda extension icon will now appear in your browser's toolbar.
+### 🏷️ 4. Custom Tags & Notes
+* **Tags:** Add multiple comma-separated tags to organize links horizontally across folders.
+* **Personal Notes:** Save context, key takeaways, or reminders right with each bookmark.
 
-## Built With
+### ⚠️ 5. Smart Duplicate Detection
+* Detects when a URL is already in your collection (handling trailing slashes and casing automatically).
+* Provides an intuitive prompt with options to:
+  * **Open Existing:** Jump right to the existing link.
+  * **Save Anyway:** Add as a duplicate if you need a separate entry.
+  * **Cancel:** Abort without altering your library.
 
-  * **HTML5**
-  * **CSS3** (with CSS Variables for easy theming)
-  * **JavaScript (ES6+)**
-  * **Chrome Extension API** (Manifest V3)
+### 📖 6. Reading List Tracker
+* Track your reading pipeline with three distinct states:
+  * ⚪ **Unread**
+  * 🟡 **In Progress**
+  * 🟢 **Completed**
+* **One-Click Toggle:** Click the status badge directly on any card to cycle through statuses.
+* Filter your view by reading status to find what to read next.
 
-## License
+### 💾 7. Backup & Restore (JSON)
+* **Export:** Download a complete JSON backup containing all your links, folders, and tags with a timestamped filename.
+* **Import:** Restore from a backup file with error validation.
+* **Duplicate Strategies on Import:**
+  * *Skip duplicates* (Safe, recommended)
+  * *Overwrite / update existing*
+  * *Keep both* (import all copies)
+* **Zero Data Loss:** Preserves your existing saved bookmarks during imports and extension updates.
 
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/m-sohel/urlPanda/blob/main/LICENSE) file for full details. 
+### ⚡ 8. Better Link Management & UI
+* **Sorting Options:** Sort by **Newest First**, **Oldest First**, **Title (A → Z)**, **Title (Z → A)**, or **Website / Domain (A → Z)**.
+* **Delete Confirmation:** Accidental clicks won't lose your data—confirmation prompts protect your links.
+* **Copy URL:** One-click clipboard copy with instant feedback toast.
+* **Favicon Support:** Automatically fetches website favicons with clean fallback icons.
+* **Clean & Responsive UI:** Modern card design with dark mode and light mode support (`prefers-color-scheme`).
+* **100% Local & Private:** All data is stored in `chrome.storage.local` on your device. No analytics, no server requests, no tracking.
 
------
+---
 
-## Made with 💛 by Mohammad Sohel
+## 🚀 How to Install
+
+Since urlPanda is built with standard Manifest V3 and runs unpacked:
+
+1. **Download or Clone:**
+   ```bash
+   git clone https://github.com/m-sohel/urlPanda.git
+   ```
+2. **Open Chrome Extensions:**
+   * In Google Chrome (or Edge, Brave, Chromium), navigate to `chrome://extensions`.
+3. **Enable Developer Mode:**
+   * Toggle the **Developer mode** switch in the top-right corner.
+4. **Load Unpacked:**
+   * Click **"Load unpacked"** in the top-left toolbar.
+   * Select the `urlPanda` directory (the folder containing `manifest.json`).
+5. **Pin & Use:**
+   * Click the puzzle icon in Chrome’s toolbar and pin **urlPanda 🐼** for instant access!
+
+---
+
+## 📁 Project Structure
+
+```
+urlPanda/
+├── images/
+│   ├── icon16.png        # Extension icon (16x16)
+│   ├── icon48.png        # Extension icon (48x48)
+│   └── icon128.png       # Extension icon (128x128)
+├── test/
+│   └── extension-logic.test.js # Automated unit test suite
+├── manifest.json         # Chrome Extension Manifest V3 configuration
+├── popup.html            # Main popup interface & modal dialogs
+├── popup.css             # Responsive theme styling (Light & Dark mode)
+├── popup.js              # Business logic, storage sync, and UI handlers
+├── LICENSE               # MIT License
+└── README.md             # Documentation
+```
+
+---
+
+## 🧪 Testing
+
+urlPanda includes an automated unit test suite verifying URL normalization, backward compatibility migration, duplicate detection, folder management, search/sort filters, and JSON backup/restore.
+
+To run the unit tests:
+
+```bash
+node test/extension-logic.test.js
+```
+
+---
+
+## 🔒 Privacy
+
+urlPanda requires only two Chrome permissions:
+* `storage`: To save your bookmarks and folders locally in your browser (`chrome.storage.local`).
+* `tabs`: To read the URL and title of the active tab when you click "Save Tab".
+
+No external servers, accounts, or analytics are used. Your data belongs solely to you.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+**Made with 💛 by Mohammad Sohel**

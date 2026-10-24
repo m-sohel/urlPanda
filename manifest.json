@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "urlPanda",
-  "version": "0.1",
-  "description": "A simple extension to save and manage important URLs.",
+  "version": "1.0.0",
+  "description": "Organize links with folders, tags, reading lists, instant search, duplicate alerts, and JSON backup.",
   "permissions": [
     "storage",
     "tabs"
