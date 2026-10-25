@@ -157,6 +157,14 @@ body {
   line-height: 1;
 }
 
+.panda-logo-img {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-sm);
+  object-fit: contain;
+  display: block;
+}
+
 .brand-text {
   display: flex;
   align-items: center;

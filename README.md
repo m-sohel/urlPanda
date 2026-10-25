@@ -88,8 +88,10 @@ Since urlPanda is built with standard Manifest V3 and runs unpacked:
 urlPanda/
 ├── images/
 │   ├── icon16.png        # Extension icon (16x16)
+│   ├── icon32.png        # Extension icon (32x32 for high-DPI displays)
 │   ├── icon48.png        # Extension icon (48x48)
-│   └── icon128.png       # Extension icon (128x128)
+│   ├── icon128.png       # Extension icon (128x128)
+│   └── panda.png         # Source panda artwork (512x512)
 ├── test/
 │   └── extension-logic.test.js # Automated unit test suite
 ├── manifest.json         # Chrome Extension Manifest V3 configuration
